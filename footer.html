@@ -1,0 +1,146 @@
+<footer id="footer" class="footer-area wow fadeIn">
+    <div class="container">
+        <div class="heading">
+            <h2>Get in touch</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contact-section">
+                    <div class="form-contant">
+                        <form id="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group in_name">
+                                        <input id="contact-name" type="text" class="form-control" placeholder="Name*" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group in_email">
+                                        <input id="contact-email" type="email" class="form-control" placeholder="E-mail">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group in_email">
+                                        <input id="contact-phone" type="tel" class="form-control" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group in_email">
+                                        <input type="text" class="form-control" id="contact-subject" placeholder="Subject*" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group in_message">
+                                        <textarea class="form-control" id="contact-message" rows="5" placeholder="Message*" required="required"></textarea>
+                                    </div>
+                                    <div class="actions">
+                                        <input type="submit" value="Send Message" name="submit" id="submitButton" class="btn small" title="Submit Your Message!">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="subcriber-info">
+                    <h3>UPDATES</h3>
+                    <p>Get updates on beds availability status and covid situation in Karnataka.</p>
+                    <div class="subcriber-box">
+                        <form id="mc-form" class="mc-form">
+                            <div class="newsletter-form">
+                                <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control" name="EMAIL" required>
+                                <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
+                                <div class="clearfix"></div>
+                                <!-- mailchimp-alerts Start -->
+                                <div class="mailchimp-alerts">
+                                    <div class="mailchimp-submitting"></div>
+                                    <!-- mailchimp-submitting end -->
+                                    <div class="mailchimp-success"></div>
+                                    <!-- mailchimp-success end -->
+                                    <div class="mailchimp-error"></div>
+                                    <!-- mailchimp-error end -->
+                                </div>
+                                <!-- mailchimp-alerts end -->
+                            </div>
+                        </form>
+                        <div id="mc-response"></div>
+                    </div>
+
+                    <div class="footer-info padding" style="margin-top: 20px;">
+                        <h3>CONTACT US</h3>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bengaluru, Karnataka</p>
+                        <p><i class="fa fa-paper-plane" aria-hidden="true"></i> covidbeds@gmail.com</p>
+                        <center><input type="submit" value="Chat with us" name="submit" id="chatBtn" class="btn small purechat-button-expand" title="Chat with us"></center>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+   $(document).ready(function() {
+
+
+            $("#mc-form").submit(function(e) {
+               e.preventDefault();
+
+               let mail = $("#mc-email").val();
+
+               $.ajax({
+                  url: 'backend/index.php',
+                  method: 'post',
+                  data: {
+                     add_mail: 1,
+                     mail: mail
+                  },
+                  success: function(data) {
+                     alert(data);
+
+                     $("#mc-response").css('color', 'green').html("Submitted successfully");
+
+                     setTimeout(function(){
+                        $("#mc-response").css('display', 'none');
+                     }, 2000);
+
+                     $("#mc-email").val('');
+                  },
+                  error: function(data) {
+                     $("#mc-response").css('color', 'red').html("Something went wrong. Please try again later");
+
+                     setTimeout(function(){
+                        $("#mc-response").css('display', 'none');
+                     }, 2000);
+                  }
+               })
+            });
+
+            $("#contact-form").submit(function(e) {
+               e.preventDefault();
+
+               let name = $("#contact-name").val();
+               let email = $("#contact-email").val();
+               let phone = $("#contact-phone").val();
+               let sub = $("#contact-subject").val();
+               let msg = $("#contact-message").val();
+
+               $.ajax({
+                  url: 'backend/index.php',
+                  method: 'post',
+                  data: {
+                     contact: 1,
+                     name: name,
+                     email: email,
+                     phone: phone,
+                     sub: sub,
+                     msg: msg
+                  },
+                  success: function(data) {
+                     alert('Your message was submitted successfully');
+                  }
+               })
+            })
+   });
+
+</script>

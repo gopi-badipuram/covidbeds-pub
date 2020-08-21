@@ -1,0 +1,41 @@
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/bg2.jpg');">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 col-sm-12">
+                  <div class="text-contant">
+                     <h2>
+                        <!-- <span class="center"><span class="icon"><img src="images/icon-logo.png" alt="#" /></span></span> -->
+                        <span class="center">
+                           <span class="icon"><img src="images/stay-home.png" alt="stay home and protect yourself from covid"></span>
+                           <span class="icon"><img src="images/wash-hands.png" alt="wash your hands regularly"></span>
+                           <span class="icon"><img src="images/sanitizer.png" alt="use sanitizers to stay safe from covid"></span>
+                        </span>
+                        <a href="#" class="typewrite" data-period="2000" data-type='[ "Stay home stay safe", "Maintain social distancing", "Wash your hands frequently", "Wear masks and use hand sanitizers" ]' style="color: white!important;">
+                        <span class="wrap"></span>
+                        </a>
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <!-- end row -->
+         </div>
+         <!-- end container -->
+      </div>
+      <script >
+        window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+      </script>

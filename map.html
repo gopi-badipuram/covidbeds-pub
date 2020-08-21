@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
+  <script>
+
+    var width = 960,
+    height = 700;
+
+    var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+    var xym = d3.geo.albers();
+    var path = d3.geo.path().projection(xym);
+
+    xym.origin([77.6, 12.75])
+    xym.translate([350, 745])
+    xym.parallels([24.6, 43.6])
+    xym.scale(100000)
+
+    d3.json("Bangalore.GeoJSON", function(data) {
+
+    	console.log('bang', data);
+
+        svg.selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        //.attr("fill", "none")
+      	.attr("stroke", "White")
+      	.attr("fill", "#157fda")
+      	.attr("stroke-width", 2)
+      	.attr("stroke-opacity", 0.5)
+      	.attr("class", "place")
+        //.style("fill", function() { return "#44aaee" })
+        .on("mouseover", function(e){console.log(e); d3.select(this).style("fill", "#5522aa")})
+        .on("mouseout", function(e){d3.select(this).style("fill", "none")})
+
+        /*svg.selectAll("text")
+	    .data(data.features)
+	    .enter()
+	    .append("svg:text")
+	    .text(function(d){
+	        return d.properties.WARD_NAME;
+	    })
+	    .attr("x", function(d){
+	        return path.centroid(d)[0];
+	    })
+	    .attr("y", function(d){
+	        return  path.centroid(d)[1];
+	    })
+	    .attr("text-anchor","middle")
+	    .attr('font-size','4pt');*/
+
+	    /*var radius = d3.scale.sqrt() 
+			.domain([0, 3e6]) 
+			.range([0, 60]); 
+
+		var arc = d3.svg.arc()
+			.outerRadius(radius)
+
+
+	    svg.append("g")
+		.attr("class", "bubble")
+		.selectAll("circle")
+		.data(data.features) 
+		.enter()
+		.append("circle") 
+   		.on('mouseover', function(d, i){
+			d3.select(this).attr('class', 'hover')
+		})
+		.on('mouseout', function(d, i){
+			d3.select(this).attr('class', '')
+		})
+		.attr("transform", function(d) { 
+			return "translate(" + path.centroid(d) + ")";
+		})
+		.attr("r", function(d) { 
+			return radius(d.properties.POP_F); 
+		})*/
+
+    });
+  </script>
