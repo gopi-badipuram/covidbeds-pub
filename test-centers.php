@@ -178,7 +178,18 @@ if($stmt = $con->prepare($query)){
                               echo '<td style="color: black; font-size: 12px; font-weight: bold; text-align: center;">'.$tc_arr[$i]['tc_cost'].'</td>
                                        <td style="color: black; text-align: center;">'.$tc_arr[$i]['tc_wait_time'].'</td>
                                        <td style="color: black; text-align: center;">'.$tc_arr[$i]['tc_types'].'</td>
-                                       <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_addr'].'</a></td>
+                                       <td>';
+                            
+                              $attribute_str = str_replace('[', '', $tc_arr[$i]['tc_attr']);
+                              $attribute_str = str_replace(']', '', $attribute_str);
+                              if ($attribute_str) {
+                                echo '<span style="font-weight: bold;">Note: </span>';
+                                $attributes = json_decode($attribute_str, true);
+                                echo '<span style="color: black; font-weight: 500;">'.$attributes['key'].': '.$attributes['value'].'</span><br><br>';
+                              }
+                                       
+                              echo '<a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_addr'].'</a>
+                                       </td>
                                      </tr>';
 
                               $tc_arr[$i]['phone'] = $p;
@@ -221,10 +232,19 @@ if($stmt = $con->prepare($query)){
                               $p .= '';
 
                               echo $p;
+                              
+                              $attribute_str = str_replace('[', '', $tc_arr[$i]['tc_attr']);
+                              $attribute_str = str_replace(']', '', $attribute_str);
+                              $attribute_display_text = '';
+                              if ($attribute_str) {
+                                $attribute_display_text .= '<br><span style="font-weight: bold;">Note: </span>';
+                                $attributes = json_decode($attribute_str, true);
+                                $attribute_display_text .=  '<span style="color: black; font-weight: 500;">'.$attributes['key'].': '.$attributes['value'].'</span><br><br>';
+                              }
 
-                              echo '<br><span style="color: green; font-weight: 500;">Cost: </span><span style="color: black; font-size: 12px; font-weight: bold;">'.$tc_arr[$i]['tc_cost'].'</span><br>
-                                       <span style="color: green; font-weight: 500;">Result in: </span><span style="color: black; text-align: center;">'.$tc_arr[$i]['tc_wait_time'].'</span><br>
-                                       <span style="color: green; font-weight: 500;">Types of test: </span><span style="color: black; text-align: center;">'.$tc_arr[$i]['tc_types'].'</span><br>
+                              echo '<br><span style="font-weight: 500;">Cost: </span><span style="color: black; font-size: 12px; font-weight: bold;">'.$tc_arr[$i]['tc_cost'].'</span><br>
+                                       <span style="font-weight: 500;">Result in: </span><span style="color: black; text-align: center;">'.$tc_arr[$i]['tc_wait_time'].'</span><br>
+                                       <span style="font-weight: 500;">Types of test: </span><span style="color: black; text-align: center;">'.$tc_arr[$i]['tc_types'].'</span><br>'.$attribute_display_text.'
                                        <a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_addr'].'</a></td>
                                      </tr>';
 
