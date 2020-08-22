@@ -2,6 +2,37 @@
 
 require_once('backend/redirect-https.php');
 require_once('backend/dbconfig.php');
+
+$counsellors_query = "select count(*) from counsellors where phone_verified = 1;";
+
+if($stmt = $con->prepare($counsellors_query)){
+   if($stmt->execute()){
+      $result = $stmt->get_result();
+      
+      $counsellors = mysqli_fetch_field($result);
+   }
+}
+
+$counselling_requests_query = "select count(*) from counselling_requests;";
+
+if($stmt = $con->prepare($counselling_requests_query)){
+   if($stmt->execute()){
+      $result = $stmt->get_result();
+      
+      $counselling_requests = mysqli_fetch_field($result);
+   }
+}
+
+$counselling_sessions_query = "select count(*) from counselling_requests where req_session_date != '0000-00-00 00:00:00';";
+
+if($stmt = $con->prepare($counselling_sessions_query)){
+   if($stmt->execute()){
+      $result = $stmt->get_result();
+      
+      $counselling_sessions = mysqli_fetch_field($result);
+   }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +97,7 @@ require_once('backend/dbconfig.php');
       <header>
          <div class="header-top wow fadeIn" style="padding: 5px 0px;">
             <div class="container">
-               <a class="navbar-brand" href="#" style="padding: 0;"><span style="font-size: 40px;"><img src="images/logo2.png" alt="image"></span></a>
+               <a class="navbar-brand" href="index.php" style="padding: 0;"><span style="font-size: 40px;"><img src="images/logo2.png" alt="image"></span></a>
                <div class="right-header" style="margin: 0;">
                   <div class="header-info">
                      <div class="info-inner">
@@ -115,6 +146,71 @@ require_once('backend/dbconfig.php');
      <div id="counseling_div" class="services wow fadeIn">
          <div class="container">
             <center><h2 style="font-weight: bold; background-color: white; padding-top: 20px; margin-top:-6%" >Free Counseling services from Naturae Viam</h2></center>
+            <?php if(isset($_GET["preview"])) { ?>
+         </div>   
+         <div class="tiles_row" >
+            <div class="covid_tile ">
+                 
+                 <div style="
+                      height: inherit;
+                      margin-right: 5%;
+                      ">
+                     <div id="counselling_requests_count" class="covid_inner_tile tile_requests"> 
+                         <span class="desktop-only"> Counselling Requests </span>
+                         <span class="mobile-only"> Requests </span>
+                         <br class="desktop-only">
+                             <div style="
+                                  font-weight: bolder;
+                                  padding-left: 22%;
+                                  ">
+                                 <div class="tile_data">100</div>
+                             </div>
+                     </div>
+                 </div>
+            </div>   
+            <div class="covid_tile ">
+                 
+                 <div style="
+                      height: inherit;
+                      margin-right: 5%;
+                      ">
+                     <div id="counselling_sessions_done" class="covid_inner_tile tile_sessions"> 
+                         <span class="desktop-only"> Counselling Sessions </span>
+                         <span class="mobile-only"> Sessions </span>
+                         <br class="desktop-only">
+                             <div style="
+                                  font-weight: bolder;
+                                  padding-left: 22%;">
+                                 <div class="tile_data">100</div>
+                             </div>
+                             
+                     </div>
+                 </div>
+            </div>
+            <div class="covid_tile ">
+                 
+                 <div style="
+                      height: inherit;
+                      margin-right: 5%;
+                      ">
+                     <div id="counsellors_count" class="covid_inner_tile tile_counsellors"> 
+                         <span class="desktop-only"> <br> Counsellors </span>
+                         <span class="mobile-only"> Counsellors </span>
+                         <br class="desktop-only">
+                             <div style="
+                                  font-weight: bolder;
+                                  padding-left: 22%;
+                                  ">
+                                 <div class="tile_data">100</div>
+                             </div>
+                             
+                     </div>
+                 </div>
+        
+             </div>
+        </div>
+        <div class="container">
+            <?php } ?>
             <div class="row">
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="appointment-form">

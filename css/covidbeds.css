@@ -94,7 +94,7 @@
       margin-top: -350px;
    }
 
-   .mobile-table{
+   .mobile-table, .mobile-only {
       display: none;
    }
 
@@ -102,6 +102,53 @@
       margin-top: -20%!important;
    }
 
+   .tiles_row {
+       margin-right: 20%;
+       margin-left: 20%;
+       height: 120px;
+   }
+   
+   .covid_tile {
+       display:block;
+       float:left;
+       display: block;
+       position: relative;
+       -moz-transform: translate3d(0,0,0);
+       -webkit-transform: translate3d(0,0,0);
+       transform: translate3d(0,0,0);
+       -moz-transition: all .2s cubic-bezier(.4,0,.2,1);
+       -webkit-transition: all .2s cubic-bezier(.4,0,.2,1);
+       transition: all .2s cubic-bezier(.4,0,.2,1);
+       width: 33%;
+       height: 97%;
+       padding-left: 10%;
+       padding-top: 1%;
+   }
+   
+   .covid_inner_tile {
+        height: 100%;
+        align-items: center;
+        padding-bottom: 35%;
+        padding-left: 20%;
+        background:dodgerblue;
+        color: white;
+        border-color: black;
+        border-style: double;
+   }
+   
+   .tile_data {
+       font-weight: 700;
+       color: white;
+       font-size: 20px;
+   }
+   
+   .table-row {
+        display: table-row;
+   }
+   
+   .hidden {
+        display: none;
+   }
 
    @media only screen and (max-width: 600px){
       nav.main-menu .navbar-toggle{
@@ -190,12 +237,33 @@
          pointer-events: all;
       }
 
-      .desktop-table{
+      .desktop-table, .desktop-only {
          display: none;
       }
 
-      .mobile-table{
+      .mobile-table, .mobile-only {
          display: block;
+      }
+      
+      .tiles_row {
+        margin-right: 9%;
+        margin-left: 1%;
+        margin-top: 1%;
+        height: 100px;
+      }
+      
+      .covid_inner_tile {
+        padding-top: 20%;
+        padding-bottom: 40%;
+        padding-left: 8%;
+        background: repeating-linear-gradient(45deg, blue, transparent 2px);
+        
+        border-color: unset;
+        border-style: unset;
+      }
+      
+      .tile_counsellors {
+         font-size: 12px;
       }
 
    }

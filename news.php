@@ -68,7 +68,7 @@ require_once('backend/dbconfig.php');
 <header>
     <div class="header-top wow fadeIn" style="padding: 5px 0px;">
         <div class="container">
-            <a class="navbar-brand" href="#" style="padding: 0;">
+            <a class="navbar-brand" href="index.php" style="padding: 0;">
                 <span style="font-size: 40px;">
                     <img src="images/logo2.png" alt="image">
                 </span>

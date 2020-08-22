@@ -81,7 +81,7 @@ if($stmt = $con->prepare($query)){
       <header>
          <div class="header-top wow fadeIn" style="padding: 5px 0px;">
             <div class="container">
-               <a class="navbar-brand" href="#" style="padding: 0;"><span style="font-size: 40px;"><img src="images/logo2.png" alt="image"></span></a>
+               <a class="navbar-brand" href="index.php" style="padding: 0;"><span style="font-size: 40px;"><img src="images/logo2.png" alt="image"></span></a>
                <div class="right-header" style="margin: 0;">
                   <div class="header-info">
                      <div class="info-inner">
@@ -154,7 +154,7 @@ if($stmt = $con->prepare($query)){
 
                               $date=date_create($tc_arr[$i]['last_update']);
 
-                              echo '<tr>
+                              echo '<tr id="test_center_'.($i).'" class="table-row">
                                        <th scope="row">'.($i+1).'</th>
                                        <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_name'].'</a></td>';
 
@@ -213,7 +213,7 @@ if($stmt = $con->prepare($query)){
 
                               $date=date_create($tc_arr[$i]['last_update']);
 
-                              echo '<tr>
+                              echo '<tr id="test_center_'.($i).'" class="table-row" >
                                        <th scope="row">'.($i+1).'</th>
                                        <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_name'].'</a><br>';
 
@@ -259,13 +259,15 @@ if($stmt = $con->prepare($query)){
                   </div>
                </div>
             </div>
+      
             <!-- all js files -->
       <script src="js/all.js"></script>
       <!-- all plugins -->
       <script src="js/custom.js"></script>
+      <script src="js/test_center_search.php"></script>
 
       <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
-      <script src="js/test_center_search.php"></script>
+      
             
       <?php include "footer.html" ?>
       <?php include "copyright.html" ?>
