@@ -844,8 +844,8 @@ function send_sms($number,$message){
 	  'region' => 'us-east-1',
 	  'version' => 'latest',
 	  'credentials' => array(
-	    'key' => 'AKIAIN5WHOMH5DHIJ2LQ',
-	    'secret' => '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')
+	    'key' => $_SERVER['AWS_KEY'],
+	    'secret' => $_SERVER['AWS_SECRET'])
 	));
 
 	
