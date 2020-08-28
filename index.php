@@ -39,7 +39,6 @@ if($stmt = $con->prepare($query)){
 
      gtag('config', 'UA-172126833-1');
    </script>
-   <script> var exports = {}; </script>
    
    <!-- Site Metas -->
    <title>Covidbeds | Covid beds in Bengaluru</title>
