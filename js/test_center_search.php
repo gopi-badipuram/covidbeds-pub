@@ -21,30 +21,6 @@
 
             $("#searchInput").on('input', function(){
                   let val = $(this).val();
-                  
-                  if(screen.width <= 600){
-                   let htm = '';
-                   
-                    for(var i = 0; i < test_center_list.length; i++){
-                        if ((test_center_list[i]['tc_name'].toLowerCase().search(val.toLowerCase()) != -1 || 
-                            test_center_list[i]['tc_addr'].toLowerCase().search(val.toLowerCase()) != -1 ||
-                            test_center_list[i]['tc_types'].toLowerCase().search(val.toLowerCase()) != -1 ||
-                            test_center_list[i]['tc_phone'].search(val.toLowerCase()) != -1)){
-                            
-                            htm += `<tr>
-                               <th scope="row">` + (i+1) + `</th>
-                                <td><a style="font-weight: bold" href="http://maps.google.com/?q=${test_center_list[i]['tc_name']}" target="_blank">${test_center_list[i]['tc_name']}</a><br>
-                                `+ test_center_list[i]['phone'] +`<br><span style="font-weight: bold;">Cost: </span><span style="color: black; font-size: 12px; font-weight: bold;">`+ test_center_list[i]['tc_cost'] + `</span><br>
-                                      <span style="font-weight: bold;">Result in: </span><span style="color: black; text-align: center;">` + test_center_list[i]['tc_wait_time'] + `</span><br>
-                                      <span style="font-weight: bold;">Types of test: </span><span style="color: black; text-align: center;">` + test_center_list[i]['tc_types'] + `</span><br>
-                                      <a href="http://maps.google.com/?q={$test_center_list[i]['tc_name']}" target="_blank">` + test_center_list[i]['tc_addr'] + `</a></td>` +
-                             `</tr>`;
-                        }
-                    }
-                    
-                    $("#testCenterTable  tbody").html(htm);
-                  
-                  } else {
 
                     for(var i = 0; i < test_center_list.length; i++){
                         if (!(test_center_list[i]['tc_name'].toLowerCase().search(val.toLowerCase()) != -1 || 
@@ -52,15 +28,15 @@
                             test_center_list[i]['tc_types'].toLowerCase().search(val.toLowerCase()) != -1 ||
                             test_center_list[i]['tc_phone'].search(val.toLowerCase()) != -1)){
                         
-                                $("#test_center_" + i).removeClass('table-row');
-                                $("#test_center_" + i).addClass('hidden');
+                                $("#test_center_" + i + "_desktop").removeClass('table-row').addClass('hidden');
+                                $("#test_center_" + i + "_mobile").removeClass('table-row').addClass('hidden');
                         } else {
                      
-                                $("#test_center_" + i).removeClass('hidden');
-                                $("#test_center_" + i).addClass('table-row');
+                                $("#test_center_" + i + "_desktop").removeClass('hidden').addClass('table-row');
+                                $("#test_center_" + i + "_mobile").removeClass('hidden').addClass('table-row');
                         }
                     }
-                  }
+                  
             });
          });
 

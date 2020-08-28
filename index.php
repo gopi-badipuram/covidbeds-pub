@@ -39,7 +39,7 @@ if($stmt = $con->prepare($query)){
 
      gtag('config', 'UA-172126833-1');
    </script>
-
+   
    <!-- Site Metas -->
    <title>Covidbeds | Covid beds in Bengaluru</title>
    <!-- Site Icons -->
@@ -58,7 +58,12 @@ if($stmt = $con->prepare($query)){
    <link rel="stylesheet" href="css/custom.css">
 
    <link rel="stylesheet" href="css/covidbeds.css">
-   <!-- Modernizer for Portfolio -->
+   
+   
+   
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Modernizer for Portfolio -->
    <script src="js/modernizer.js"></script>
    <!-- [if lt IE 9] -->
 
@@ -306,6 +311,18 @@ if($stmt = $con->prepare($query)){
       </div>
       <!-- end section -->
 
+      <!-- all js files -->
+      
+      <!-- all plugins -->
+      
+
+      <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
+      <script src="js/hospital_search.php"></script>
+      
+      <?php include "footer.html" ?>
+      <?php include "copyright.html" ?>
+      <?php $_SESSION['hospitals_array'] = $arr; ?>
+      
       <!--Start of Tawk.to Script-->
       <script type="text/javascript">
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -319,17 +336,6 @@ if($stmt = $con->prepare($query)){
       })();
       </script>
       <!--End of Tawk.to Script-->
-
-      <!-- all js files -->
-      <script src="js/all.js"></script>
-      <!-- all plugins -->
-      <script src="js/custom.js"></script>
-
-      <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
-      <script src="js/hospital_search.php"></script>
-      
-      <?php include "footer.html" ?>
-      <?php include "copyright.html" ?>
-      <?php $_SESSION['hospitals_array'] = $arr; ?>
    </body>
 </html>
+

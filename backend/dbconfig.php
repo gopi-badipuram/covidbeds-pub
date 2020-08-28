@@ -1,6 +1,5 @@
 <?php 
 
-
 define('host',$_SERVER['DB_HOST']);
 define('user',$_SERVER['DB_USER']);
 define('pass',$_SERVER['DB_USER_PASSWORD']);

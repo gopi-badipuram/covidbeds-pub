@@ -61,7 +61,11 @@ if($stmt = $con->prepare($query)){
    <link rel="stylesheet" href="css/custom.css">
 
    <link rel="stylesheet" href="css/covidbeds.css">
-   <!-- Modernizer for Portfolio -->
+   
+   
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Modernizer for Portfolio -->
    <script src="js/modernizer.js"></script>
    <!-- [if lt IE 9] -->
 
@@ -154,7 +158,7 @@ if($stmt = $con->prepare($query)){
 
                               $date=date_create($tc_arr[$i]['last_update']);
 
-                              echo '<tr id="test_center_'.($i).'" class="table-row">
+                              echo '<tr id="test_center_'.($i).'_desktop" class="table-row">
                                        <th scope="row">'.($i+1).'</th>
                                        <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_name'].'</a></td>';
 
@@ -213,7 +217,7 @@ if($stmt = $con->prepare($query)){
 
                               $date=date_create($tc_arr[$i]['last_update']);
 
-                              echo '<tr id="test_center_'.($i).'" class="table-row" >
+                              echo '<tr id="test_center_'.($i).'_mobile" >
                                        <th scope="row">'.($i+1).'</th>
                                        <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_name'].'</a><br>';
 
@@ -259,11 +263,6 @@ if($stmt = $con->prepare($query)){
                   </div>
                </div>
             </div>
-      
-            <!-- all js files -->
-      <script src="js/all.js"></script>
-      <!-- all plugins -->
-      <script src="js/custom.js"></script>
       <script src="js/test_center_search.php"></script>
 
       <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
