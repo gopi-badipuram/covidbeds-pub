@@ -45,10 +45,13 @@ require_once('backend/dbconfig.php');
     <link rel="stylesheet" href="css/custom.css">
 
     <link rel="stylesheet" href="css/covidbeds.css">
-    <!-- Modernizer for Portfolio -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Modernizer for Portfolio -->
     <script src="js/modernizer.js"></script>
-    <script src="js/all.js"></script>
-    <script src="js/custom.js"></script>
+    
+   
+    
     <script src="js/video.js"></script>
     <!-- [if lt IE 9] -->
 

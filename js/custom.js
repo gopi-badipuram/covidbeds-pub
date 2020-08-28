@@ -144,3 +144,5 @@ var TxtType = function(el, toRotate, period) {
         that.tick();
         }, delta);
     };
+
+    export {TxtType};
