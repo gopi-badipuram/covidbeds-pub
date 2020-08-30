@@ -235,7 +235,7 @@ if(isset($_GET['id'])){
               data = JSON.parse(data);
 
               if(data.response == 'success'){
-                window.location.href = './blog/' + $("#slug").val() + '.php';
+                window.location.href = './blogs/' + $("#slug").val() + '.php';
               }
               else{
                 alert('Something went wrong');

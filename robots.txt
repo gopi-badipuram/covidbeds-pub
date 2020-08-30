@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /counselling/
-Disallow: /blog/
-Disallow: /login.php
+Disallow: /blogs/
+Disallow: /blog.php
+

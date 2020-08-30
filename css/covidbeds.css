@@ -98,7 +98,7 @@
       display: none;
    }
 
-   #stats, #test_centers, #news, #time-table, #counseling_div {
+   #stats, #test_centers, #news, #time-table, #counseling_div, #ambulance_on_whatsapp {
       margin-top: -20%!important;
    }
 
@@ -149,6 +149,18 @@
    .hidden {
         display: none;
    }
+   
+   img.poster {
+      border : 5px solid lightseagreen; 
+   }
+   
+   td.img-container {
+       padding-left: 25%; 
+   }
+   
+   td.img-container:after {
+       display: block;
+   }
 
    @media only screen and (max-width: 600px){
       nav.main-menu .navbar-toggle{
@@ -159,8 +171,8 @@
          margin-top: 60px !important;
       }
 
-      #stats, #test_centers, #news, #time-table, #counseling_div {
-         margin-top: -20%!important;
+      #stats, #test_centers, #news, #time-table, #counseling_div, #ambulance_on_whatsapp {
+         margin-top: -20%  !important;
       }
 
       ::-webkit-scrollbar {
@@ -264,6 +276,14 @@
       
       .tile_counsellors {
          font-size: 12px;
+      }
+      
+      td.img-container {
+        padding-left: unset;
+      }
+      
+      img.poster {
+        width : 100%;
       }
 
    }
