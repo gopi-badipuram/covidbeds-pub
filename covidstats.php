@@ -73,7 +73,7 @@ if($stmt = $con->prepare($query)){
    </script>
 
    <!-- Site Metas -->
-   <title>Covidbeds | Covid beds in Bengaluru</title>
+   <title>Covidbeds | Covid stats of Bengaluru, Karnataka and India</title>
    <!-- Site Icons -->
    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
    <!-- Bootstrap CSS -->

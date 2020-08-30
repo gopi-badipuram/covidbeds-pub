@@ -28,7 +28,7 @@ require_once('backend/dbconfig.php');
    </script>
 
     <!-- Site Metas -->
-    <title>Latest Covid related news</title>
+    <title>Latest Covid news</title>
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <!-- Bootstrap CSS -->

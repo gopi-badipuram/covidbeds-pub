@@ -57,7 +57,7 @@ if($stmt = $con->prepare($counselling_sessions_query)){
    </script>
 
    <!-- Site Metas -->
-   <title>Covidbeds | Covid beds in Bengaluru</title>
+   <title>Covidbeds | Free Covid counselling</title>
    <!-- Site Icons -->
    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
    <!-- Bootstrap CSS -->
