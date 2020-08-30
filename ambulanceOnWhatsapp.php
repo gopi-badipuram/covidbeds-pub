@@ -14,8 +14,8 @@ require_once('backend/dbconfig.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Read the latest in Covid news.">
-    <meta name="keywords" content="covid, coronavirus, covid19, covid news">
+    <meta name="description" content="Read how to avail the ambulance service on WhatsApp.">
+    <meta name="keywords" content="covid, coronavirus, covid19, ambulance, whatsapp ambulance">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172126833-1"></script>
@@ -28,7 +28,7 @@ require_once('backend/dbconfig.php');
    </script>
 
     <!-- Site Metas -->
-    <title>Latest Covid related news</title>
+    <title>Ambulance On WhatsApp</title>
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <!-- Bootstrap CSS -->
@@ -56,8 +56,8 @@ require_once('backend/dbconfig.php');
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://covidbeds.org/news.php">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Latest Covid related news">
-    <meta property="og:description" content="Read the latest in Covid news.">
+    <meta property="og:title" content="Ambulance on WhatsApp">
+    <meta property="og:description" content="Read how to avail the ambulance service on WhatsApp.">
     <meta property="og:image" content="https://covidbeds.org/images/logo2.png">
 
 </head>
