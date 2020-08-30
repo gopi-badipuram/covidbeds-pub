@@ -50,7 +50,7 @@ if($stmt = $con->prepare($query)){
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- Site CSS -->
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="css/style.css">
    <!-- Colors CSS -->
    <link rel="stylesheet" href="css/colors.css">
    <!-- ALL VERSION CSS -->
@@ -111,6 +111,7 @@ if($stmt = $con->prepare($query)){
                         <li><a href="covidstats.php" title="Latest Covid statistics for Bengaluru, Karanataka and India.">Covid Cases</a></li>
                         <li><a href="news.php" title="Latest Covid related news">News</a></li>
                         <li><a href="counseling.php" title="Free counseling" >Free Counseling</a></li>
+                        <li><a href="ambulanceOnWhatsapp.php" title="Ambulance On WhatsApp">Ambulance On WhatsApp</a></li>
                      </ul>
                   </div>
                </nav>
@@ -217,7 +218,7 @@ if($stmt = $con->prepare($query)){
 
                               $date=date_create($tc_arr[$i]['last_update']);
 
-                              echo '<tr id="test_center_'.($i).'_mobile" >
+                              echo '<tr id="test_center_'.($i).'_mobile" class="test_center_row">
                                        <th scope="row">'.($i+1).'</th>
                                        <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_name'].'</a><br>';
 
@@ -237,6 +238,8 @@ if($stmt = $con->prepare($query)){
 
                               echo $p;
                               
+                              echo '<div class="test_center_details_mobile" style="display:none;">';
+                              
                               $attribute_str = str_replace('[', '', $tc_arr[$i]['tc_attr']);
                               $attribute_str = str_replace(']', '', $attribute_str);
                               $attribute_display_text = '';
@@ -252,6 +255,7 @@ if($stmt = $con->prepare($query)){
                                        <a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_addr'].'</a></td>
                                      </tr>';
 
+                              echo '</div>';
                               $tc_arr[$i]['phone'] = $p;
 
                            }
@@ -264,7 +268,7 @@ if($stmt = $con->prepare($query)){
                </div>
             </div>
       <script src="js/test_center_search.php"></script>
-
+      <script src="js/test_center_mobile_util.js"></script>
       <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
       
             

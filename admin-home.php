@@ -76,7 +76,7 @@ if(!isset($_SESSION['covid_app_user']) || $_SESSION['covid_app_user'] != 'admin'
 	        <a class="nav-link" href="daily-stats.php">Daily Stats</a>
 	      </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog/blog-list.php">Blog</a>
+            <a class="nav-link" href="blogs/blog-list.php">Blog</a>
           </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="messages.php">Messages</a>

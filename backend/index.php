@@ -522,7 +522,7 @@ if(isset($_POST['add_blog'])){
 
     $date = date_format(date_create($date), "Y-m-d H:i:s");
 
-    $file = fopen("../blog/".$slug.".php", "w");
+    $file = fopen("../blogs/".$slug.".php", "w");
 
     require_once('write-blog.php');
 

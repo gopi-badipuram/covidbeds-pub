@@ -47,7 +47,7 @@ if($stmt = $con->prepare($query)){
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- Site CSS -->
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="css/style.css">
    <!-- Colors CSS -->
    <link rel="stylesheet" href="css/colors.css">
    <!-- ALL VERSION CSS -->
@@ -108,7 +108,8 @@ if($stmt = $con->prepare($query)){
                         <li><a href="test-centers.php" title="Covid testing centers in Bengaluru">Testing Centers</a></li>
                         <li><a href="covidstats.php" title="Latest Covid statistics for Bengaluru, Karanataka and India.">Covid Cases</a></li>
                         <li><a href="news.php" title="Latest Covid related news">News</a></li>
-                        <li><a href="counseling.php" title="Free counseling" >Free Counseling</a></li>
+                        <li><a href="counseling.php" title="Free counseling">Free Counseling</a></li>
+                        <li><a href="ambulanceOnWhatsapp.php" title="Ambulance On WhatsApp">Ambulance On WhatsApp</a></li>
                      </ul>
                   </div>
                </nav>

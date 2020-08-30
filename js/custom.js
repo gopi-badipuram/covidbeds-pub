@@ -145,4 +145,4 @@ var TxtType = function(el, toRotate, period) {
         }, delta);
     };
 
-    export {TxtType};
+export { TxtType };

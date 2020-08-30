@@ -5,7 +5,7 @@ require_once('../backend/dbconfig.php');
 session_start();
 
 if(!isset($_SESSION['covid_app_user']) || $_SESSION['covid_app_user'] != 'admin'){
-	header("Location: ../login.php?redirect=blog/blog-list.php");
+	header("Location: ../login.php?redirect=blogs/blog-list.php");
 }
 
 $query = "select * from blog order by blog_date desc";
