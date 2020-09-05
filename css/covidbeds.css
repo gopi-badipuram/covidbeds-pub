@@ -101,6 +101,10 @@
    #stats, #test_centers, #news, #time-table, #counseling_div, #ambulance_on_whatsapp {
       margin-top: -20%!important;
    }
+   
+   #news .social-links, #counseling_div .social-links, #ambulance_on_whatsapp .social-links {
+    padding-right: 20px;
+   }
 
    .tiles_row {
        margin-right: 20%;
@@ -284,6 +288,17 @@
       
       img.poster {
         width : 100%;
+      }
+      
+      
+      .right-header-top {
+        margin-right: 35px;
+        margin-top: 9px;
+      }
+      
+      .right-header-top .header-info {
+        width: 105px;
+        right: 10px;
       }
 
    }

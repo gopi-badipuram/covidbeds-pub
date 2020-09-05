@@ -90,6 +90,13 @@ header {
     float: right;
 	margin:11px 0;
 }
+
+.right-header-top {
+    float: right;
+	margin:11px 10px;
+    background: #2895f1;
+}
+
 .header-info {
     float: left;
     width: 100%;
@@ -815,12 +822,8 @@ body.clinic_version .footer .widget-title h3 {
 .social-links li a i {
     color: #fff;
     font-size: 24px;
-    margin-right: 20px;
-}
-.social-links li a i {
-    color: #fff;
-    font-size: 24px;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 .footer-info i {
     position: absolute;
@@ -850,6 +853,13 @@ body.clinic_version .footer .widget-title h3 {
     float: right;
     margin: 0;
 }
+
+
+.right-header-top .social-links li {
+    float: right;
+    margin: 10px 5px;
+}
+
 .footer-info p {
     padding-left: 40px;
 }
