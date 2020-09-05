@@ -58,7 +58,7 @@ require_once('backend/dbconfig.php');
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ambulance on WhatsApp">
     <meta property="og:description" content="Read how to avail the ambulance service on WhatsApp.">
-    <meta property="og:image" content="https://covidbeds.org/images/logo2.png">
+    <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
 
 </head>
 
@@ -66,22 +66,7 @@ require_once('backend/dbconfig.php');
 
 <header>
     <div class="header-top wow fadeIn" style="padding: 5px 0px;">
-        <div class="container">
-            <a class="navbar-brand" href="index.php" style="padding: 0;">
-                <span style="font-size: 40px;">
-                    <img src="images/logo2.png" alt="image">
-                </span>
-            </a>
-            <div class="right-header" style="margin: 0;">
-                <div class="header-info">
-                    <div class="info-inner">
-                        <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
-                        <span class="iconcont" style="padding-right: 10px;">Emergency Medical Support: <a title="Emergency medical support phone number for covid" href="tel: 104">104 /</a> <a title="Emergency medical support phone number for covid" href="tel: 97456-97456">97456-97456 </a></span><br>
-                        <span class="iconcont">Aptamitra: <a title="Aptamitra phone number for covid related queries" href="tel: 14410">14410</a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include "header_top.html" ?>
     </div>
     <div class="header-bottom wow fadeIn">
         <div class="container">

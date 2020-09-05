@@ -74,7 +74,7 @@ if($stmt = $con->prepare($query)){
    <meta property="og:type" content="website">
    <meta property="og:title" content="Covid19 beds availability status at Bengaluru hospitals">
    <meta property="og:description" content="Covidbeds is an organisation to help covid patients. View latest beds availabilty at covid hospitals, view covid testing centers (with cost of testing) and avail free online counseling on our website. Also take a look at latest Covid cases and read latest Covid news and guidelines.">
-   <meta property="og:image" content="https://covidbeds.org/images/logo2.png">
+   <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
 
    </head>
 
@@ -82,18 +82,7 @@ if($stmt = $con->prepare($query)){
       <!-- END LOADER -->
       <header>
          <div class="header-top wow fadeIn" style="padding: 5px 0px;">
-            <div class="container">
-               <a class="navbar-brand" href="#" style="padding: 0;"><span style="font-size: 40px;"><img src="images/logo2.png" alt="image"></span></a>
-               <div class="right-header" style="margin: 0;">
-                  <div class="header-info">
-                     <div class="info-inner">
-                        <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
-                        <span class="iconcont" style="padding-right: 10px;">Emergency Medical Support: <a title="Emergency medical support phone number for covid" href="tel: 104">104 /</a> <a title="Emergency medical support phone number for covid" href="tel: 97456-97456">97456-97456 </a></span><br>
-                        <span class="iconcont">Aptamitra: <a title="Aptamitra phone number for covid related queries" href="tel: 14410">14410</a></span>	
-                     </div>
-                  </div>
-               </div>
-            </div>
+            <?php include "header_top.html" ?>
          </div>
          <div class="header-bottom wow fadeIn">
             <div class="container">
