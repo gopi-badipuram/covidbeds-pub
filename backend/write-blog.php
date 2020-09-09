@@ -3,7 +3,12 @@
 function get_blog_html($title, $author, $date, $img, $content){
 
 	
-	return '<!DOCTYPE html>
+	return '<?php
+
+			require_once("../backend/redirect-https.php");
+
+		?>
+	<!DOCTYPE html>
 	<html lang="en">
 	   <!-- Basic -->
 	   <meta charset="utf-8">
@@ -72,7 +77,7 @@ function get_blog_html($title, $author, $date, $img, $content){
 	                  <div class="header-info">
 	                     <div class="info-inner">
 	                        <span class="icontop"><img src="../images/phone-icon.png" alt="#"></span>
-	                        <span class="iconcont" style="padding-right: 10px;">Emergency Medical Support: <a title="Emergency medical support phone number for covid" href="tel: 104">104 /</a> <a title="Emergency medical support phone number for covid" href="tel: 97456-97456">97456-97456 </a></span><br>
+	                        <span class="iconcont" style="padding-right: 10px;">Ambulance on Whatsapp: <a title="Ambulance on Whatsapp" target="_blank" href="https://wa.me/917610810848">76-108-108-48</a></span><br>
 	                        <span class="iconcont">Aptamitra: <a title="Aptamitra phone number for covid related queries" href="tel: 14410">14410</a></span>	
 	                     </div>
 	                  </div>
