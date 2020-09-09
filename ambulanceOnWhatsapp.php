@@ -81,7 +81,6 @@ require_once('backend/dbconfig.php');
                          <li><a href="test-centers.php" title="Covid testing centers in Bengaluru">Testing centers</a></li>
                          <li><a href="covidstats.php" title="Latest Covid statistics for Bengaluru, Karanataka and India.">Covid Cases</a></li>
                          <li><a href="news.php">News</a></li>
-                         <li><a href="counseling.php" title="Free counseling" >Free Counseling</a></li>
                          <li><a class="active" href="#" title="Ambulance On WhatsApp">Ambulance On WhatsApp</a></li>
 
                     </ul>
