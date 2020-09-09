@@ -227,7 +227,7 @@ if($stmt = $con->prepare($query)){
 
                               echo $p;
                               
-                              echo '<div class="test_center_details_mobile" style="display:none;">';
+                              echo '<div class="test_center_details_mobile">';
                               
                               $attribute_str = str_replace('[', '', $tc_arr[$i]['tc_attr']);
                               $attribute_str = str_replace(']', '', $attribute_str);
@@ -257,7 +257,6 @@ if($stmt = $con->prepare($query)){
                </div>
             </div>
       <script src="js/test_center_search.php"></script>
-      <script src="js/test_center_mobile_util.js"></script>
       <script src="https://d3js.org/d3.v2.min.js?2.10.0"></script>
       
             
