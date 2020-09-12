@@ -90,7 +90,7 @@ if(isset($_GET['id'])){
 			    <textarea id="addr" class="form-control" placeholder="Address of Hospital"><?php if(isset($_GET['id'])) echo $row['hospital_address']; ?></textarea>
 			  </div>
 			  <hr style="background:green;height:5px"/>
-			  <p style="color:blue;size:medium;"> You can fill the general beds availability in these fields or fill detailed (private vs government, ic, hdu, ventilators) beds availability further below. If detailed beds availablity is provided, these general availability fields will be ignored.</p>
+			  <p style="color:blue;size:medium;"> You can fill the general beds availability in these fields and fill detailed (general, icu, hdu, ventilators) beds availability further below.</p>
 			  <div class="form-group">
 			    <label for="beds">Beds allotted</label>
 			    <input id="beds" type="number" class="form-control" placeholder="Number of beds allotted" value="<?php if(isset($_GET['id'])) echo $row['hospital_alloted_beds']; ?>">
@@ -100,7 +100,7 @@ if(isset($_GET['id'])){
 			    <input id="vacant" type="text" class="form-control" placeholder="Number of beds vacant" value="<?php if(isset($_GET['id'])) echo $row['hospital_vacant_beds']; ?>">
 			  </div>
 			  <hr style="background:green;height:5px"/>
-			  <p style="color:blue;size:medium;"> You can fill detailed (private vs government, ic, hdu, ventilators) beds availability in these fields. If detailed beds availablity is provided, the general availability fields filled above will be ignored.</p>
+			  <p style="color:blue;size:medium;"> You can fill detailed (general, icu, hdu, ventilators) beds availability in these fields.</p>
 			  <div class="form-group">
 			    <label for="detailed_general">Govt - General beds available</label>
 			    <input id="detailed_general" type="number" class="form-control" placeholder="Number of general beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_general']; ?>">

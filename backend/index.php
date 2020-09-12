@@ -120,10 +120,9 @@ if(isset($_POST['update_hospital'])){
     where hospital_id=?;";
 
     if($stmt = $con->prepare($query)){
-    	$stmt->bind_param("ssssssssssssssss",$name,$phone,$addr,$beds,$attr,$vacant,$date,
-        $detailed_general, $detailed_hdu, $detailed_icu, $detailed_vent,
-    	$detailed_pvt_general, $detailed_pvt_hdu, $detailed_pvt_icu, $detailed_pvt_vent,
-    	$id);
+    	$stmt->bind_param("ssssssssssss",$name,$phone,$addr,$beds,$attr,$vacant,$date,
+                                        $detailed_general, $detailed_hdu, $detailed_icu, $detailed_vent,
+                                        $id);
 
     	if($stmt->execute()){
     		echo json_encode(array("response" => "success"));
