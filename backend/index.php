@@ -68,11 +68,17 @@ if(isset($_POST['add_hospital'])){
     $date = date_format(date_create($last_updated), "Y-m-d H:i:s");
 
     //$date = Date("Y-m-d H:i:s");
+    
+    $detailed_general = $_POST['detailed_general'];
+    $detailed_hdu = $_POST['detailed_hdu'];
+    $detailed_icu = $_POST['detailed_icu'];
+    $detailed_vent = $_POST['detailed_vent'];
 
-    $query = "insert into hospital_details(hospital_name,hospital_phone,hospital_address,hospital_alloted_beds,hospital_attr,hospital_vacant_beds,last_update) values(?,?,?,?,?,?,?);";
+    $query = "insert into hospital_details(hospital_name,hospital_phone,hospital_address,hospital_alloted_beds,hospital_attr,hospital_vacant_beds,last_update,hospital_beds_general, hospital_beds_hdu,hospital_beds_icu,hospital_beds_ventilators) values(?,?,?,?,?,?,?,?,?,?,?);";
 
     if($stmt = $con->prepare($query)){
-    	$stmt->bind_param("sssssss",$name,$phone,$addr,$beds,$attr,$vacant,$date);
+    	$stmt->bind_param("sssssssssss",$name,$phone,$addr,$beds,$attr,$vacant,$date, 
+                                        $detailed_general, $detailed_hdu, $detailed_icu, $detailed_vent);
 
     	if($stmt->execute()){
     		echo json_encode(array("response" => "success"));
@@ -103,11 +109,20 @@ if(isset($_POST['update_hospital'])){
     $date = date_format(date_create($last_updated), "Y-m-d H:i:s");
 
     //$date = Date("Y-m-d H:i:s");
+    
+    $detailed_general = $_POST['detailed_general'];
+    $detailed_hdu = $_POST['detailed_hdu'];
+    $detailed_icu = $_POST['detailed_icu'];
+    $detailed_vent = $_POST['detailed_vent'];
 
-    $query = "update hospital_details set hospital_name=?, hospital_phone=?, hospital_address=?, hospital_alloted_beds=?, hospital_attr=?, hospital_vacant_beds=?, last_update=? where hospital_id=?;";
+    $query = "update hospital_details set hospital_name=?, hospital_phone=?, hospital_address=?, hospital_alloted_beds=?, hospital_attr=?, hospital_vacant_beds=?, last_update=?,
+    hospital_beds_general=?, hospital_beds_hdu=?,hospital_beds_icu=?,hospital_beds_ventilators=? 
+    where hospital_id=?;";
 
     if($stmt = $con->prepare($query)){
-    	$stmt->bind_param("ssssssss",$name,$phone,$addr,$beds,$attr,$vacant,$date,$id);
+    	$stmt->bind_param("ssssssssssss",$name,$phone,$addr,$beds,$attr,$vacant,$date,
+                                        $detailed_general, $detailed_hdu, $detailed_icu, $detailed_vent,
+                                        $id);
 
     	if($stmt->execute()){
     		echo json_encode(array("response" => "success"));
