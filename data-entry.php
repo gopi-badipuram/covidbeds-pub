@@ -89,6 +89,8 @@ if(isset($_GET['id'])){
 			    <label for="addr">Hospital Address</label>
 			    <textarea id="addr" class="form-control" placeholder="Address of Hospital"><?php if(isset($_GET['id'])) echo $row['hospital_address']; ?></textarea>
 			  </div>
+			  <hr style="background:green;height:5px"/>
+			  <p style="color:blue;size:medium;"> You can fill the general beds availability in these fields or fill detailed (private vs government, ic, hdu, ventilators) beds availability further below. If detailed beds availablity is provided, these general availability fields will be ignored.</p>
 			  <div class="form-group">
 			    <label for="beds">Beds allotted</label>
 			    <input id="beds" type="number" class="form-control" placeholder="Number of beds allotted" value="<?php if(isset($_GET['id'])) echo $row['hospital_alloted_beds']; ?>">
@@ -97,6 +99,26 @@ if(isset($_GET['id'])){
 			    <label for="vacant">Beds vacant</label>
 			    <input id="vacant" type="text" class="form-control" placeholder="Number of beds vacant" value="<?php if(isset($_GET['id'])) echo $row['hospital_vacant_beds']; ?>">
 			  </div>
+			  <hr style="background:green;height:5px"/>
+			  <p style="color:blue;size:medium;"> You can fill detailed (private vs government, ic, hdu, ventilators) beds availability in these fields. If detailed beds availablity is provided, the general availability fields filled above will be ignored.</p>
+			  <div class="form-group">
+			    <label for="detailed_general">Govt - General beds available</label>
+			    <input id="detailed_general" type="number" class="form-control" placeholder="Number of general beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_general']; ?>">
+			  </div>
+			  <div class="form-group">
+			    <label for="detailed_hdu">Govt - HDU beds available</label>
+			    <input id="detailed_hdu" type="text" class="form-control" placeholder="Number of HDU beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_hdu']; ?>">
+			  </div>
+			  <div class="form-group">
+			    <label for="detailed_icu">Govt - ICU beds available</label>
+			    <input id="detailed_icu" type="text" class="form-control" placeholder="Number of ICU beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_icu']; ?>">
+			  </div>
+			  <div class="form-group">
+			    <label for="detailed_vent">Govt - ventilator beds available</label>
+			    <input id="detailed_vent" type="text" class="form-control" placeholder="Number of beds with ventilators available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_vent']; ?>">
+			  </div>
+			  
+			  <hr style="background:green;height:2px"/>
 			  <label>Other attributes <span class="ion-plus-circled text-primary" onclick="addAttr()"></span></label>
 			  <div id="form_inner">
 			  	<?php
@@ -122,7 +144,7 @@ if(isset($_GET['id'])){
 			    <label for="last_updated">Last updated</label>
 			    <input id="last_updated" type="datetime-local" class="form-control" placeholder="Last updated" value="<?echo substr(date_format(date_create($row['last_update']), DATE_ISO8601), 0, 19);?>">
 			  </div>
-			  <center><button id="submit_btn" class="btn btn-primary" type="submit"><? if($_GET['id']) echo "Update"; else echo "Submit";?></button></center>
+			  <center><button id="submit_btn" class="btn btn-primary" type="submit"><?php if($_GET['id']) echo "Update"; else echo "Submit";?></button></center>
 			</form>
     	</div>
     </div>
@@ -135,8 +157,8 @@ if(isset($_GET['id'])){
 
     <script type="text/javascript">
 
-    let attr = <? echo sizeof($attr);?>;
-    let hosp_id = <? if($_GET['id']) echo $_GET['id']; else echo -1;?>
+    let attr = <?php echo sizeof($attr);?>;
+    let hosp_id = <?php if($_GET['id']) echo $_GET['id']; else echo -1;?>
 
     function addAttr(){
     	$("#form_inner").append(`<div id="form_div${++attr}" class="form-row">
@@ -202,6 +224,12 @@ if(isset($_GET['id'])){
     		let beds = $("#beds").val();
     		let vacant = $("#vacant").val();
     		let last_updated = $("#last_updated").val();
+    		
+    		let detailed_general = $("#detailed_general").val();
+    		let detailed_hdu = $("#detailed_hdu").val();
+    		let detailed_icu = $("#detailed_icu").val();
+    		let detailed_vent = $("#detailed_vent").val();
+    		
     		let arr = [];
 
     		for(var i = 1; i <= attr; i++){
@@ -222,6 +250,10 @@ if(isset($_GET['id'])){
     			beds: beds,
     			vacant: vacant,
     			last_updated: last_updated,
+    			detailed_general: detailed_general,
+    			detailed_hdu: detailed_hdu,
+    			detailed_icu: detailed_icu,
+    			detailed_vent: detailed_vent,
     			attr: JSON.stringify(arr)
     		};
 
