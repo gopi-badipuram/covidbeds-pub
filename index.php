@@ -148,11 +148,36 @@ if($stmt = $con->prepare($query)){
                                  <th scope="row">'.($i+1).'</th>
                                  <td><a href="http://maps.google.com/?q='.$arr[$i]['hospital_name'].'" target="_blank">'.$arr[$i]['hospital_name'].'</a></td><td><center>';
 
-                        if($arr[$i]['hospital_vacant_beds'] == 'Full'){
-                           echo '<span class="badge badge-danger">Full</span>';
-                        }
-                        elseif($arr[$i]['hospital_vacant_beds'] == 'Available'){
+                        if(($arr[$i]['hospital_vacant_beds'] == 'Available') ||
+                            ($arr[$i]['hospital_beds_general'] > 0 ||
+                             $arr[$i]['hospital_beds_hdu'] > 0 ||
+                             $arr[$i]['hospital_beds_icu'] > 0 ||
+                             $arr[$i]['hospital_beds_ventilators'] > 0
+                            ))
+                        {
                            echo '<span class="badge badge-success">Available</span>';
+                           
+                           if ($arr[$i]['hospital_beds_general'] > 0) {
+                             echo '<br/><span class="badge badge-success">Isolation</span>';
+                           }
+                           if ($arr[$i]['hospital_beds_hdu'] > 0) {
+                             echo '<br/><span class="badge badge-success">HDU</span>';
+                           }
+                           if ($arr[$i]['hospital_beds_icu'] > 0) {
+                             echo '<br/><span class="badge badge-success">ICU</span>';
+                           }
+                           if ($arr[$i]['hospital_beds_ventilators'] > 0) {
+                             echo '<br/><span class="badge badge-success">Ventilators</span>';
+                           }
+                        }
+                        elseif (($arr[$i]['hospital_vacant_beds'] == 'Full')||
+                            ($arr[$i]['hospital_beds_general'] == 0 &&
+                             $arr[$i]['hospital_beds_hdu'] == 0 &&
+                             $arr[$i]['hospital_beds_icu'] == 0 &&
+                             $arr[$i]['hospital_beds_ventilators'] == 0
+                            ))
+                        {
+                           echo '<span class="badge badge-danger">Full</span>';
                         }
                         else{
                            echo '<span class="badge">Unknown</span>';
@@ -205,13 +230,38 @@ if($stmt = $con->prepare($query)){
 
                         echo '<tr>
                                  <th scope="row">'.($i+1).'</th>
-                                 <td><a style="font-weight: bold;" href="http://maps.google.com/?q='.$arr[$i]['hospital_name'].'" target="_blank">'.$arr[$i]['hospital_name'].'</a><br><span style="color: lightgrey;">Beds Status: </span>';
+                                 <td><a style="font-weight: bold;" href="http://maps.google.com/?q='.$arr[$i]['hospital_name'].'" target="_blank">'.$arr[$i]['hospital_name'].'</a><br><span style="color: lightgrey;">Status: </span>';
 
-                        if($arr[$i]['hospital_vacant_beds'] == 'Full'){
-                           echo '<span class="badge badge-danger">Full</span>';
-                        }
-                        elseif($arr[$i]['hospital_vacant_beds'] == 'Available'){
+                        if(($arr[$i]['hospital_vacant_beds'] == 'Available') ||
+                            ($arr[$i]['hospital_beds_general'] > 0 ||
+                             $arr[$i]['hospital_beds_hdu'] > 0 ||
+                             $arr[$i]['hospital_beds_icu'] > 0 ||
+                             $arr[$i]['hospital_beds_ventilators'] > 0
+                            ))
+                        {
                            echo '<span class="badge badge-success">Available</span>';
+                           
+                           if ($arr[$i]['hospital_beds_general'] > 0) {
+                             echo '<span class="badge badge-success">Isolation</span>';
+                           }
+                           if ($arr[$i]['hospital_beds_hdu'] > 0) {
+                             echo '<span class="badge badge-success">HDU</span>';
+                           }
+                           if ($arr[$i]['hospital_beds_icu'] > 0) {
+                             echo '<span class="badge badge-success">ICU</span>';
+                           }
+                           if ($arr[$i]['hospital_beds_ventilators'] > 0) {
+                             echo '<span class="badge badge-success">Ventilators</span>';
+                           }
+                        }
+                        elseif (($arr[$i]['hospital_vacant_beds'] == 'Full')||
+                            ($arr[$i]['hospital_beds_general'] == 0 &&
+                             $arr[$i]['hospital_beds_hdu'] == 0 &&
+                             $arr[$i]['hospital_beds_icu'] == 0 &&
+                             $arr[$i]['hospital_beds_ventilators'] == 0
+                            ))
+                        {
+                           echo '<span class="badge badge-danger">Full</span>';
                         }
                         else{
                            echo '<span class="badge">Unknown</span>';

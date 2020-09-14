@@ -97,25 +97,29 @@ if(isset($_GET['id'])){
 			  </div>
 			  <div class="form-group">
 			    <label for="vacant">Beds vacant</label>
-			    <input id="vacant" type="text" class="form-control" placeholder="Number of beds vacant" value="<?php if(isset($_GET['id'])) echo $row['hospital_vacant_beds']; ?>">
+			    <select id="vacant" class="form-control" placeholder="Number of beds vacant" >
+                    <option id="Available" value="Available">Available</option>
+                    <option id="Full" value="Full">Full</option>
+                    <option id="Unknown" value="Unknown">Unknown</option>
+			    </select>
 			  </div>
 			  <hr style="background:green;height:5px"/>
 			  <p style="color:blue;size:medium;"> You can fill detailed (general, icu, hdu, ventilators) beds availability in these fields.</p>
 			  <div class="form-group">
-			    <label for="detailed_general">Govt - General beds available</label>
-			    <input id="detailed_general" type="number" class="form-control" placeholder="Number of general beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_general']; ?>">
+			    <label for="detailed_general">Isolation beds available</label>
+			    <input id="detailed_general" type="number" class="form-control" placeholder="Number of isolation beds available" value="<?php if(isset($_GET['id'])) echo $row['hospital_beds_general']; ?>">
 			  </div>
 			  <div class="form-group">
-			    <label for="detailed_hdu">Govt - HDU beds available</label>
-			    <input id="detailed_hdu" type="text" class="form-control" placeholder="Number of HDU beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_hdu']; ?>">
+			    <label for="detailed_hdu">HDU beds available</label>
+			    <input id="detailed_hdu" type="number" class="form-control" placeholder="Number of HDU beds available" value="<?php if(isset($_GET['id'])) echo $row['hospital_beds_hdu']; ?>">
 			  </div>
 			  <div class="form-group">
-			    <label for="detailed_icu">Govt - ICU beds available</label>
-			    <input id="detailed_icu" type="text" class="form-control" placeholder="Number of ICU beds available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_icu']; ?>">
+			    <label for="detailed_icu">ICU beds available</label>
+			    <input id="detailed_icu" type="number" class="form-control" placeholder="Number of ICU beds available" value="<?php if(isset($_GET['id'])) echo $row['hospital_beds_icu']; ?>">
 			  </div>
 			  <div class="form-group">
-			    <label for="detailed_vent">Govt - ventilator beds available</label>
-			    <input id="detailed_vent" type="text" class="form-control" placeholder="Number of beds with ventilators available under Govt quota" value="<?php if(isset($_GET['id'])) echo $row['detailed_vent']; ?>">
+			    <label for="detailed_vent">Ventilator beds available</label>
+			    <input id="detailed_vent" type="number" class="form-control" placeholder="Number of beds available with ventilators" value="<?php if(isset($_GET['id'])) echo $row['hospital_beds_ventilators']; ?>">
 			  </div>
 			  
 			  <hr style="background:green;height:2px"/>
@@ -229,6 +233,12 @@ if(isset($_GET['id'])){
     		let detailed_hdu = $("#detailed_hdu").val();
     		let detailed_icu = $("#detailed_icu").val();
     		let detailed_vent = $("#detailed_vent").val();
+    		
+    		if (vacant === "Full") {
+                detailed_general = 0; detailed_hdu = 0; detailed_icu = 0; detailed_vent = 0;
+    		} else if (vacant === "Unknown") {
+                detailed_general = -1; detailed_hdu = -1; detailed_icu = -1; detailed_vent = -1;
+    		}
     		
     		let arr = [];
 
