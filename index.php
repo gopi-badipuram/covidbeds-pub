@@ -144,7 +144,7 @@ if($stmt = $con->prepare($query)){
 
                         $date=date_create($arr[$i]['last_update']);
 
-                        echo '<tr>
+                        echo '<tr id="hospital_'.($i).'_desktop">
                                  <th scope="row">'.($i+1).'</th>
                                  <td><a href="http://maps.google.com/?q='.$arr[$i]['hospital_name'].'" target="_blank">'.$arr[$i]['hospital_name'].'</a></td><td><center>';
 
@@ -155,18 +155,28 @@ if($stmt = $con->prepare($query)){
                              $arr[$i]['hospital_beds_ventilators'] > 0
                             ))
                         {
+                           $displayed = false;
+                           
                            if ($arr[$i]['hospital_beds_general'] > 0) {
                              echo '<span class="badge badge-success">Isolation</span><br/>';
+                             $displayed = true;
                            }
                            if ($arr[$i]['hospital_beds_hdu'] > 0) {
                              echo '<span class="badge badge-success">HDU</span><br/>';
+                             $displayed = true;
                            }
                            if ($arr[$i]['hospital_beds_icu'] > 0) {
                              echo '<span class="badge badge-success">ICU</span><br/>';
+                             $displayed = true;
                            }
                            if ($arr[$i]['hospital_beds_ventilators'] > 0) {
                              echo '<span class="badge badge-success">Ventilators</span><br/>';
+                             $displayed = true;
                            }
+                           if (!$displayed) {
+                             echo '<span class="badge badge-success">Available</span><br/>';
+                           }
+                           
                         }
                         elseif (($arr[$i]['hospital_vacant_beds'] == 'Full')||
                             ($arr[$i]['hospital_beds_general'] == 0 &&
@@ -226,7 +236,7 @@ if($stmt = $con->prepare($query)){
 
                         $date=date_create($arr[$i]['last_update']);
 
-                        echo '<tr>
+                        echo '<tr id="hospital_'.($i).'_mobile">
                                  <th scope="row">'.($i+1).'</th>
                                  <td><a style="font-weight: bold;" href="http://maps.google.com/?q='.$arr[$i]['hospital_name'].'" target="_blank">'.$arr[$i]['hospital_name'].'</a><br><span style="color: lightgrey;">Status: </span>';
 
@@ -237,17 +247,26 @@ if($stmt = $con->prepare($query)){
                              $arr[$i]['hospital_beds_ventilators'] > 0
                             ))
                         {
+                           $displayed = false;
                            if ($arr[$i]['hospital_beds_general'] > 0) {
                              echo '<span class="badge badge-success">Isolation</span>';
+                             $displayed = true;
                            }
                            if ($arr[$i]['hospital_beds_hdu'] > 0) {
                              echo '<span class="badge badge-success">HDU</span>';
+                             $displayed = true;
                            }
                            if ($arr[$i]['hospital_beds_icu'] > 0) {
                              echo '<span class="badge badge-success">ICU</span>';
+                             $displayed = true;
                            }
                            if ($arr[$i]['hospital_beds_ventilators'] > 0) {
                              echo '<span class="badge badge-success">Ventilators</span>';
+                             $displayed = true;
+                           }
+                           
+                           if (!$displayed) {
+                             echo '<span class="badge badge-success">Available</span><br/>';
                            }
                         }
                         elseif (($arr[$i]['hospital_vacant_beds'] == 'Full')||
