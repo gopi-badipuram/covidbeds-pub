@@ -207,7 +207,7 @@ if($stmt = $con->prepare($query)){
 
                               $date=date_create($tc_arr[$i]['last_update']);
 
-                              echo '<tr id="test_center_'.($i).'_mobile" class="test_center_row">
+                              echo '<tr id="test_center_'.($i).'_mobile" class="table_row">
                                        <th scope="row">'.($i+1).'</th>
                                        <td><a href="http://maps.google.com/?q='.$tc_arr[$i]['tc_name'].'" target="_blank">'.$tc_arr[$i]['tc_name'].'</a><br>';
 
