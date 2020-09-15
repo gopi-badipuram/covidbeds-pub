@@ -156,16 +156,16 @@ if($stmt = $con->prepare($query)){
                             ))
                         {
                            if ($arr[$i]['hospital_beds_general'] > 0) {
-                             echo '<br/><span class="badge badge-success">Isolation</span>';
+                             echo '<span class="badge badge-success">Isolation</span><br/>';
                            }
                            if ($arr[$i]['hospital_beds_hdu'] > 0) {
-                             echo '<br/><span class="badge badge-success">HDU</span>';
+                             echo '<span class="badge badge-success">HDU</span><br/>';
                            }
                            if ($arr[$i]['hospital_beds_icu'] > 0) {
-                             echo '<br/><span class="badge badge-success">ICU</span>';
+                             echo '<span class="badge badge-success">ICU</span><br/>';
                            }
                            if ($arr[$i]['hospital_beds_ventilators'] > 0) {
-                             echo '<br/><span class="badge badge-success">Ventilators</span>';
+                             echo '<span class="badge badge-success">Ventilators</span><br/>';
                            }
                         }
                         elseif (($arr[$i]['hospital_vacant_beds'] == 'Full')||
