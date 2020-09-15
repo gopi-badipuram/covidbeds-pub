@@ -155,8 +155,6 @@ if($stmt = $con->prepare($query)){
                              $arr[$i]['hospital_beds_ventilators'] > 0
                             ))
                         {
-                           echo '<span class="badge badge-success">Available</span>';
-                           
                            if ($arr[$i]['hospital_beds_general'] > 0) {
                              echo '<br/><span class="badge badge-success">Isolation</span>';
                            }
@@ -239,8 +237,6 @@ if($stmt = $con->prepare($query)){
                              $arr[$i]['hospital_beds_ventilators'] > 0
                             ))
                         {
-                           echo '<span class="badge badge-success">Available</span>';
-                           
                            if ($arr[$i]['hospital_beds_general'] > 0) {
                              echo '<span class="badge badge-success">Isolation</span>';
                            }
