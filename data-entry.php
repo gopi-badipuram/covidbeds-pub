@@ -98,9 +98,9 @@ if(isset($_GET['id'])){
 			  <div class="form-group">
 			    <label for="vacant">Beds vacant</label>
 			    <select id="vacant" class="form-control">
-                    <option id="Available" value="Available" <?php if ($row[hospital_vacant_beds] == "Available") echo 'selected' ?> >Available</option>
-                    <option id="Full" value="Full" <?php if ($row[hospital_vacant_beds] == "Full") echo 'selected' ?> >Full</option>
-                    <option id="Unknown" value="Unknown" <?php if ($row[hospital_vacant_beds] == "Unknown") echo 'selected' ?>>Unknown</option>
+                    <option id="Available" value="Available" <?php if ($row['hospital_vacant_beds'] == "Available") echo 'selected' ?> >Available</option>
+                    <option id="Full" value="Full" <?php if ($row['hospital_vacant_beds'] == "Full") echo 'selected' ?> >Full</option>
+                    <option id="Unknown" value="Unknown" <?php if ($row['hospital_vacant_beds'] == "Unknown") echo 'selected' ?>>Unknown</option>
 			    </select>
 			  </div>
 			  <hr style="background:green;height:5px"/>
