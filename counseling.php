@@ -91,7 +91,7 @@ if($stmt = $con->prepare($counselling_sessions_query)){
    <meta property="og:type" content="website">
    <meta property="og:title" content="Free online Covid counselling.">
    <meta property="og:description" content="Avail free online Covid counselling offered by expert counsellors of Naturae Viam.">
-   <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
+   <meta property="og:image" content="https://covidbeds.org/images/logo_for_og.jpeg">
 
    </head>
 

@@ -109,7 +109,7 @@ if($stmt = $con->prepare($query)){
          <div id="ward_list" class="col-md-6" style="margin-top: 20px; height: 500px; overflow: scroll;">
             <div style="width: 100%; display: flex; justify-content: space-between;">
                 <p style="font-size: 24px;">Cases in 24 hours</p>
-                <input type="date" style="" value="<? echo $d;?>">
+                <input type="date" style="" value="<?php echo $d;?>">
             </div>
 
             <div style="display: flex; justify-content: space-around; margin-top: 20px;">
@@ -180,7 +180,7 @@ if($stmt = $con->prepare($query)){
 
     <script type="text/javascript">
 
-    let stats = <? echo json_encode($arr);?>;
+    let stats = <?php echo json_encode($arr);?>;
 
     var width = screen.width/2,
     height = 500;

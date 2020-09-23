@@ -106,7 +106,7 @@ if($stmt = $con->prepare($query)){
    <meta property="og:type" content="website">
    <meta property="og:title" content="Covid19 cases in Bengaluru, Karnataka and India.">
    <meta property="og:description" content="Latest Covid19 cases in Bengaluru, Karnataka and India.">
-   <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
+   <meta property="og:image" content="https://covidbeds.org/images/logo_for_og.jpeg">
 
    </head>
 

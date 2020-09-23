@@ -86,19 +86,19 @@ if(isset($_GET['id'])){
         <div class="row">
           <div class="col-md-6">
             <label for="title">Title</label>
-            <input id="title" type="text" class="form-control" placeholder="Article title" value="<? if(isset($_GET['id'])) echo $row['blog_title'];?>">
+            <input id="title" type="text" class="form-control" placeholder="Article title" value="<?php if(isset($_GET['id'])) echo $row['blog_title'];?>">
           </div>
           <div class="col-md-6">
             <label for="slug">Slug</label>
-            <input id="slug" type="text" class="form-control" placeholder="article-name" value="<? if(isset($_GET['id'])) echo $row['blog_slug'];?>">
+            <input id="slug" type="text" class="form-control" placeholder="article-name" value="<?php if(isset($_GET['id'])) echo $row['blog_slug'];?>">
           </div>
           <div class="col-md-6" style="margin-top: 10px;">
             <label for="author">Author name</label>
-            <input id="author" type="text" class="form-control" placeholder="Author name" value="<? if(isset($_GET['id'])) echo $row['blog_author'];?>">
+            <input id="author" type="text" class="form-control" placeholder="Author name" value="<?php if(isset($_GET['id'])) echo $row['blog_author'];?>">
           </div>
           <div class="col-md-6" style="margin-top: 10px;">
             <label for="date">Published on</label>
-            <input id="date" type="datetime-local" class="form-control" placeholder="Publish date" value="<? if(isset($_GET['id'])) echo substr(date_format(date_create($row['blog_date']), DATE_ISO8601), 0, 19)?>">
+            <input id="date" type="datetime-local" class="form-control" placeholder="Publish date" value="<?php if(isset($_GET['id'])) echo substr(date_format(date_create($row['blog_date']), DATE_ISO8601), 0, 19)?>">
           </div>
           <div class="col-md-6" style="margin-top: 20px; padding-left: 20px;">
             <input type="file" class="custom-file-input" id="customFile">
@@ -160,7 +160,7 @@ if(isset($_GET['id'])){
       let fontSize = 3;
       let featImgData = '';
 
-      let id = <? if(isset($_GET['id'])) echo $_GET['id']; else echo -1;?>
+      let id = <?php if(isset($_GET['id'])) echo $_GET['id']; else echo -1;?>
 
       $(document).ready(function(){
         $("#customFile").change(function(event){
@@ -201,7 +201,7 @@ if(isset($_GET['id'])){
 
         $("#submitBtn").click(function(){
           if(featImgData == ''){
-            featImgData = <? echo "'".$row['blog_img']."'";?>
+            featImgData = <?php echo "'".$row['blog_img']."'";?>
           }
 
           let data1 = {

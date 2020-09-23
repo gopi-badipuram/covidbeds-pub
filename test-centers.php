@@ -76,7 +76,7 @@ if($stmt = $con->prepare($query)){
    <meta property="og:type" content="website">
    <meta property="og:title" content="Covid19 testing centers in Bengaluru">
    <meta property="og:description" content="Covid19 testing centers in Bengaluru with details of prices, type of test, results time,  contacts and location maps.">
-   <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
+   <meta property="og:image" content="https://covidbeds.org/images/logo_for_og.jpeg">
 
    </head>
 
