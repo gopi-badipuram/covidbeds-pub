@@ -109,6 +109,11 @@ require_once('backend/dbconfig.php');
         <h2 style="font-weight: bold; background-color: white; padding-top: 20px">Ambulance On WhatsApp</h2>
     </div>
     <div class="row">
+    <div class="col-md-12" style="padding-bottom: 5px; padding-top: 5px;"> 
+        <center style="font-weight: bold;color: #00ff50; font-size: xx-large;padding-bottom: 5px;"> 
+            <a href="https://wa.me/917610810848" style="font-weight: bold; color: #8af501;" target="_blank">  Chat now </a>
+        </center>
+    <div>
     <div class="col-md-12">
         <table id="table_ambulance_sop">
             <tr>
