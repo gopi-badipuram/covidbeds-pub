@@ -98,7 +98,7 @@ if(isset($_GET['id'])){
           </div>
           <div class="col-md-6" style="margin-top: 10px;">
             <label for="date">Published on</label>
-            <input id="date" type="datetime-local" class="form-control" placeholder="Publish date" value="<?php if(isset($_GET['id'])) echo substr(date_format(date_create($row['blog_date']), DATE_ISO8601), 0, 19)?>">
+            <input id="date" type="datetime-local" class="form-control" placeholder="Publish date" value="<?php if(isset($_GET['id'])) echo substr(date_format(date_create($row['blog_date']), "Y-m-d\TH:i"), 0, 17)?>">
           </div>
           <div class="col-md-6" style="margin-top: 20px; padding-left: 20px;">
             <input type="file" class="custom-file-input" id="customFile">
