@@ -118,7 +118,7 @@ if(isset($_GET['id'])){
 			  		}
 			  	?>
 			  </div>
-			  <center><button id="submit_btn" class="btn btn-primary" type="submit"><? if($_GET['id']) echo "Update"; else echo "Submit";?></button></center>
+			  <center><button id="submit_btn" class="btn btn-primary" type="submit"><?php if($_GET['id']) echo "Update"; else echo "Submit";?></button></center>
 			</form>
     	</div>
     </div>
@@ -131,8 +131,8 @@ if(isset($_GET['id'])){
 
     <script type="text/javascript">
 
-    let attr = <? echo sizeof($attr);?>;
-    let amb_id = <? if($_GET['id']) echo $_GET['id']; else echo -1;?>
+    let attr = <?php echo sizeof($attr);?>;
+    let amb_id = <?php if($_GET['id']) echo $_GET['id']; else echo -1;?>
 
     function addAttr(){
     	$("#form_inner").append(`<div id="form_div${++attr}" class="form-row">

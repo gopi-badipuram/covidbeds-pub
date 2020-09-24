@@ -146,7 +146,7 @@ if(isset($_GET['id'])){
 			  </div>
 			  <div class="form-group">
 			    <label for="last_updated">Last updated</label>
-			    <input id="last_updated" type="datetime-local" class="form-control" placeholder="Last updated" value="<?echo substr(date_format(date_create($row['last_update']), DATE_ISO8601), 0, 19);?>">
+			    <input id="last_updated" type="datetime-local" class="form-control" placeholder="Last updated" value="<?php echo substr(date_format(date_create($row['last_update']), "Y-m-d\TH:i"), 0, 17);?>">
 			  </div>
 			  <center><button id="submit_btn" class="btn btn-primary" type="submit"><?php if($_GET['id']) echo "Update"; else echo "Submit";?></button></center>
 			</form>

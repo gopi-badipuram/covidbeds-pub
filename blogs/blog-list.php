@@ -90,7 +90,7 @@ if($stmt = $con->prepare($query)){
             <div class="container">
                 <div class="row">
 
-                    <? 
+                    <?php 
                         for($i = 0; $i < sizeof($arr); $i++){
                             echo '<div class="col-md-4">
                                     <div class="card">

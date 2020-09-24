@@ -43,14 +43,14 @@
     		<form id="login_form">
 			  <div class="form-group">
 			    <label for="login_id">Login ID</label>
-			    <input id="login_id" type="text" class="form-control" placeholder="Login ID" required>
+			    <input id="login_id" type="text" class="form-control" placeholder="Login ID" autocomplete="username" required>
                 <div class="invalid-feedback">
                     Wrong username or password
                 </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="login_pass">Password</label>
-			    <input id="login_pass" type="password" class="form-control" placeholder="Login Password" required>
+			    <input id="login_pass" type="password" class="form-control" placeholder="Login Password" autocomplete="current-password" required>
                 <div class="invalid-feedback">
                     Wrong username or password
                 </div>
@@ -95,7 +95,7 @@
                         data = JSON.parse(data);
 
                         if(data.response == 'success'){
-                            let redirect = "<? if(isset($_GET['redirect'])) echo $_GET['redirect']; else echo 'admin-home.php'; ?>";
+                            let redirect = "<?php if(isset($_GET['redirect'])) echo $_GET['redirect']; else echo 'admin-home.php'; ?>";
                             console.log(redirect);
                             window.location.href = redirect;
                         }

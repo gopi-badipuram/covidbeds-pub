@@ -62,7 +62,7 @@ require_once('backend/dbconfig.php');
     <meta property="og:type" content="website">
     <meta property="og:title" content="Latest Covid related news">
     <meta property="og:description" content="Read the latest in Covid news.">
-    <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
+    <meta property="og:image" content="https://covidbeds.org/images/logo_for_og.jpeg">
 
 </head>
 

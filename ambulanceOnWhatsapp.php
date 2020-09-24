@@ -58,7 +58,7 @@ require_once('backend/dbconfig.php');
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ambulance on WhatsApp">
     <meta property="og:description" content="Read how to avail the ambulance service on WhatsApp.">
-    <meta property="og:image" content="https://covidbeds.org/images/logo1_fb.png">
+    <meta property="og:image" content="https://covidbeds.org/images/logo_for_og.jpeg">
 
 </head>
 
